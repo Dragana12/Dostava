@@ -1,0 +1,11 @@
+{
+        "baseUrl": "http://ec2-34-210-59-96.us-west-2.compute.amazonaws.com/",
+        "env": {
+                "lokalUsername": "test",
+                "lokalPassword": "test",
+                "vozacUsername": "test1",
+                "vozacPassword": "test1",
+                "managerUsername": "test2",
+                "managerPassword": "test2"
+        }   
+}
