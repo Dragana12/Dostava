@@ -11,12 +11,6 @@ import { sendOrder } from '../page_object/slanjePorudzbine.js'
 
 describe('login menadzer', () => {
 
-    it('visit login page', () => {
-        cy.clearCookies();
-        cy.visit("/main_login.php");
-        loginPage.isVisible();
-    });
-
     it('login with valid credentials', () => {
         loginPage.loginManager();
 

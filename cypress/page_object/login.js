@@ -22,6 +22,8 @@ class LoginPage {
 
 
     login(inUsername, inPassword) {
+        cy.clearCookies();
+        cy.visit("/main_login.php");
         this.isVisible();
         this.username.type(inUsername);
         this.password.type(inPassword);
@@ -42,6 +44,11 @@ class LoginPage {
     loginManager() {
         this.login(Cypress.env('managerUsername'), Cypress.env('managerPassword'));
         generalPage.isMenadzerLoggedIn();
+    };
+
+    logout() {
+        cy.visit("/main_logout.php");
+        this.isVisible();
     };
 
 

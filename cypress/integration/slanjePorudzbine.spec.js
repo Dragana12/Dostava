@@ -12,19 +12,12 @@ describe('slanje porudzbine', () => {
     //     console.log('beforeEach called');
 
     // });
-    it('lokal login', () => {
-        cy.clearCookies();
-        cy.visit("/main_login.php");
-        loginPage.loginLokal();
-        sendOrder.isVisible();
-
-    });
 
     it('posalji porudzbinu', () => {
-        sendOrder.isVisible();
+        loginPage.loginLokal();
         sendOrder.sendOrder('adresa 1', '12345');
-        sendOrder.orderOutput.should ('be.visible');
-
+        sendOrder.orderOutput.should('be.visible');
+        sendOrder.cancelOrder();
     });
 
 

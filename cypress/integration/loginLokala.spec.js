@@ -10,12 +10,6 @@ import { sendOrder } from '../page_object/slanjePorudzbine.js'
 
 describe('login test', () => {
 
-    it('visit login page', () => {
-        cy.clearCookies();
-        cy.visit("/main_login.php");
-        loginPage.isVisible();
-    });
-
     it('login with valid credentials', () => {
         loginPage.loginLokal();
 
@@ -27,11 +21,6 @@ describe('login test', () => {
     //    cy.get('#myusername').type('test');
     //    cy.get('#mypassword').type('test');
     //    cy.get('input[type=submit]').click();
-
-});
-
-it('click on the logout button', () => {
-    cy.visit("/main_logout.php");
 
 });
 

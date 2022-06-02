@@ -2,44 +2,48 @@
 
 class SendOrder {
 
-    get localHeading(){
+    get localHeading() {
         return cy.get('#title');
     }
 
-    get address(){
+    get address() {
         return cy.get('[name="address"]');
     }
 
-    get phone(){
+    get phone() {
         return cy.get('[type="tel"]');
     }
 
-    get finishBtn(){
+    get finishBtn() {
         return cy.get('[name="submit"]');
     }
 
-    get orderOutput (){
-        return cy.get ('#output_button');
-        
+    get orderOutput() {
+        return cy.get('#output_button');
+
     }
 
 
-    sendOrder(inAddress, inPhone){
+    sendOrder(inAddress, inPhone) {
+        this.isVisible();
         this.address.type(inAddress);
         this.phone.type(inPhone);
         this.finishBtn.click();
+        this.orderOutput.should('be.visible');
     }
 
     isVisible() {
-        this.finishBtn.should ('be.visible');
-        this.localHeading.should ('be.visible');
-        this.address.should ('be.visible');
-        this.phone.should ('be.visible');
-    
+        this.finishBtn.should('be.visible');
+        this.localHeading.should('be.visible');
+        this.address.should('be.visible');
+        this.phone.should('be.visible');
+
     }
 
-    cancelOrder () {
-        this.orderOutput.should ('have.value', 'OTKAŽI');
+    cancelOrder() {
+        this.orderOutput.should('be.visible');
+        this.orderOutput.should('have.value', 'OTKAŽI');
+        this.orderOutput.click();
     }
 };
 
