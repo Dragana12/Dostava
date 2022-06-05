@@ -5,6 +5,7 @@ import { loginPage } from "../page_object/login";
 import { sendOrder } from "../page_object/slanjePorudzbine";
 import { vozacPage } from "../page_object/vozac";
 
+
 describe('bid porudzbine', () => {
 
     it('otkazi porudzbinu', () => {
@@ -21,7 +22,8 @@ describe('bid porudzbine', () => {
 
     });
 
-    it('zavrsi porudzbinu', () => {
+    it.only('zavrsi porudzbinu', () => {
+        cy.log('Nesto2');
         //login lokal
         loginPage.loginLokal();
         //napraviti porudzbinu
@@ -37,7 +39,9 @@ describe('bid porudzbine', () => {
     // </input>/<script>isVisible('input', false);isVisible('bottom', false);isVisible('output', true);isVisible('output_form', true);startTimeout(1654200814,665);</script>
 //</form>
 
+
     });
+
 
     //treba pratiti broj porudzbine kroz cio test
     //kako praviti komentare u cypressu u test runner-u

@@ -32,16 +32,19 @@ class LoginPage {
     }
 
     loginLokal() {
+        cy.log('Login lokal: ' + Cypress.env('lokalUsername'));
         this.login(Cypress.env('lokalUsername'), Cypress.env('lokalPassword'));
         generalPage.isLokalLoggedIn();
     };
 
     loginVozac() {
+        cy.log('Login vozac: ' + Cypress.env('vozacUsername'));
         this.login(Cypress.env('vozacUsername'), Cypress.env('vozacPassword'));
         generalPage.isVozacLoggedIn();
     };
 
     loginManager() {
+        cy.log('Login menadzer: ' + Cypress.env('managerUsername'));
         this.login(Cypress.env('managerUsername'), Cypress.env('managerPassword'));
         generalPage.isMenadzerLoggedIn();
     };
